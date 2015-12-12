@@ -27,9 +27,13 @@
     <%= f.text_area :description %>
   </div>
   <div class="field">
-    <%= f.label :completed %><br>
-    <%= f.check_box :completed %>
+    <% if @todo_item.persisted? %>
+      <%= f.label :completed %><br>
+      <%= f.check_box :completed %>
+    <% end %>
   </div>
+  
+
   <div class="actions">
     <%= f.submit %>
   </div>

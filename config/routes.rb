@@ -1,7 +1,15 @@
 Rails.application.routes.draw do
+  get 'sessions/new'
+
+  get 'sessions/create'
+
+  get 'sessions/destroy'
+
   resources :todo_lists do
     resources :todo_items
   end
+
+  resources :sessions, only: [:new, :create, :destroy]
 
   root to: "todo_lists#index"
   # The priority is based upon order of creation: first created -> highest priority.
