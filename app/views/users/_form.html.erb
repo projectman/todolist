@@ -1,3 +1,5 @@
+
+
 <%= form_for(@user) do |f| %>
   <% if @user.errors.any? %>
     <div id="error_explanation">
@@ -12,14 +14,24 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :username %><br>
+    <%= f.label :username, 'Username:' %><br>
     <%= f.text_field :username %>
   </div>
+
   <div class="field">
-    <%= f.label :password_digest %><br>
-    <%= f.text_field :password_digest %>
+    <%= f.label :password_digest, 'Password' %><br>
+    <%= f.password_field :password_digest, size: 40 %>
   </div>
+
+<!--   what with password_confirmation??? -->
+  <div class="field">
+    <%= f.label :password_confirmation, 'Confirm' %><br>
+    <%= f.password_field :password_confirmation, size: 40 %>
+  </div>
+
   <div class="actions">
     <%= f.submit %>
   </div>
+
 <% end %>
+

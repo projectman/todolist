@@ -10,7 +10,7 @@ class ApplicationController < ActionController::Base
     def ensure_login
       # Always go to login page unless session contains user_id:
       # No user Id -> no login -> redirect_to login_path
-      redirect_to login_path unless session[:user_id]
+      redirect_to login_path unless session[:user_id] || new_user_path
     end
     
     def logged_in?
