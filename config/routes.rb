@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   delete "/logout" => "sessions#destroy", as: "logout"
 
   resources :users, only: [:show, :new, :create, :destroy, :update]
+  get 'signup' => 'users#new'
   
 end
   
