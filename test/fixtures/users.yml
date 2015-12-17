@@ -1,9 +1,1 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
-
-one:
-  username: rich
-  password_digest: 123abc
-
-two:
-  username: jim
-  password_digest: abc123

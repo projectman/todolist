@@ -6,8 +6,13 @@
 </p>
 
 <p>
-  <strong>Password digest:</strong>
+  <strong>Password:</strong>
   <%= @user.password_digest %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @user.email %>
 </p>
 
 <%= link_to 'Edit', user_path %> |
