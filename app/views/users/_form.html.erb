@@ -18,24 +18,23 @@
     <%= f.text_field :username, size: 40 %>
   </div>
 
-<div class="field">
-    <%= f.label :email, 'Email:' %><br>
-    <%= f.email_field :email, size: 40 %>
-</div
-
   <div class="field">
-    <%= f.label :password, 'Password:' %><br>
-    <%= f.password_field :password, size: 40 %>
+      <%= f.label :email, 'Email:' %><br>
+      <%= f.email_field :email, size: 40 %>
+  </div>
+  <div class="field">
+      <%= f.label :password, 'Password:' %><br>
+      <%= f.password_field :password, size: 40 %>
   </div>
 
 <!--   what with password_confirmation??? -->
   <div class="field">
-    <%= f.label :password_confirmation, 'Confirm' %><br>
+    <%= f.label :password_confirmation, 'Confirm password' %><br>
     <%= f.password_field :password_confirmation, size: 40 %>
   </div>
 
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit "Create my account"%>
   </div>
 
 <% end %>

@@ -2,9 +2,10 @@
   
   <nav>
     <ul>
-      <li><%= link_to "About",   '#' %></li>
-      <li><%= link_to "Contact", '#' %></li>
+
       <li><%= link_to "Home", todo_lists_path %> </li>
+      <li><%= link_to "About User: ", current_user %><b><%= current_user.username %></b></li>
+      <li><%= link_to "Back", '#' %></li> <!-- how to create "just back"-->
     </ul>
   </nav> 
 </footer>

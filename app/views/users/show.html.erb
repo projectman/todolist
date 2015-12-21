@@ -1,8 +1,9 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Username:</strong>
-  <%= @user.username %>
+
+  <%= gravatar_for @user %>
+  <p><strong>Username:
+  <%= @user.username %></strong>
 </p>
 
 <p>
@@ -10,5 +11,5 @@
   <%= @user.email %>
 </p>
 
-<%= link_to 'Edit', user_path %> |
+<%= link_to 'Edit', edit_user_path %> |
 <%= link_to 'Back', login_path %> | <%= link_to 'Home', todo_lists_path %>

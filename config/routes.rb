@@ -9,8 +9,7 @@ Rails.application.routes.draw do
   get "/login" => "sessions#new", as: "login"
   delete "/logout" => "sessions#destroy", as: "logout"
 
-  resources :users, only: [:show, :new, :create, :destroy, :update, :index]
-  
+  resources :users
 end
   
   # The priority is based upon order of creation: first created -> highest priority.
