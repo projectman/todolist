@@ -19,9 +19,11 @@ class ApplicationController < ActionController::Base
     end
 
     def current_user
-      
-      @current_user ||= User.find(session[:user_id])
-    
-      
+      if @user_id != nil
+        @current_user ||= User.find(session[:user_id])
+      else
+        @current_user = User.first
+        
+      end
     end
 end
