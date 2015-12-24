@@ -6,7 +6,7 @@
       <li><%= link_to "Home", todo_lists_path %> </li>
       <li><%= link_to "About User: ", @user %><b>
       	<%= @user.username unless @user.nil? %></b></li>
-      <li><%= link_to "Back", '#' %></li> <!-- how to create "just back"-->
+      <li><a href="javascript:history.back()" >Back</a></li> 
     </ul>
   </nav> 
 </footer>
