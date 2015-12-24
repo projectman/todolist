@@ -17,8 +17,8 @@ TodoList.all.each do |list|
 end
 
 users = User.create! [
-  { username: "jim", password: "abc123" },
-  { username: "rich", password: "123abc" }
+  { username: "jim", password: "abc123", email: "jim@online.com" },
+  { username: "rich", password: "123abc", email: "rich@online.com"}
 ]
 
 TodoList.all.each do |list|
