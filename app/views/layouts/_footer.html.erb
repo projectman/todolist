@@ -4,8 +4,13 @@
     <ul>
 
       <li><%= link_to "Home", todo_lists_path %> </li>
-      <li><%= link_to "About User: ", @user %><b>
-      	<%= @user.username unless @user.nil? %></b></li>
+      <li><%= link_to "About User: ", current_user %><b>
+      	<% if current_user.nil? %>
+      	  No user logged in!
+      	<% else %>
+      	  <%= current_user.username %>
+        <% end %>
+      </b></li>
       <li><a href="javascript:history.back()" >Back</a></li> 
     </ul>
   </nav> 
