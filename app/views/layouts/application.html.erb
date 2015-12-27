@@ -11,19 +11,24 @@
   <![endif]-->
 </head>
 <body>
+  <% flash.each do |key, value| %>
+       <p id='<%= key %>'><%= value %></p>
+  <% end %>
 
 	<% if logged_in? %>
 	  <div style='float: right;'>
 	    Logged in as user: <b> <%= current_user.username %></b>  |
 	    <%= link_to "Logout", logout_path, method: :delete %>
+
 	  </div>
 
 	<% end %>
 	<%= render 'layouts/header' %>
 	<div class='container'>
-    	<%= yield %>
-    	<%= render 'layouts/footer'%>
-    	<%= debug(params) if Rails.env.development? %>
+    
+    <%= yield %>
+    <%= render 'layouts/footer'%>
+    <%= debug(params) if Rails.env.development? %>
 	  
 	</div>
 

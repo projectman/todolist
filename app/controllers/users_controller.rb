@@ -1,6 +1,12 @@
+
 class UsersController < ApplicationController
+  
+  include SessionsHelper
+
   before_action :set_user, only: [:show, :edit, :update, :destroy]
   skip_before_action :ensure_login, only: [:new, :create]
+
+  
 
   # GET /users
   # GET /users.json
@@ -31,7 +37,7 @@ class UsersController < ApplicationController
     respond_to do |format|
       if @user.save
         # login for just created user
-        login @user
+        sign_in @user
         # redirect to todo_list of user 
         format.html { redirect_to todo_lists_path, notice: "User #{@user.username} was successfully created." }
         format.json { render :show, status: :created, location: @user }

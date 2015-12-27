@@ -1,0 +1,7 @@
+Tasks for development
+
+1. add info on login page that if we logined: "You are logged in as 'username' and don't need login again. Logout first to login as another user". 
+
+2. notice on first page in todo-list 2 times display ??? 
+
+3. Add notice that caps on

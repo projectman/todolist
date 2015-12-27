@@ -1,5 +1,6 @@
 class User < ActiveRecord::Base
-  before_save { email.downcase! }
+  before_save { self.email = email.downcase }
+  before_create :create_remember_token
 
   has_secure_password
   
@@ -20,8 +21,31 @@ class User < ActiveRecord::Base
   
   validates :password, presence: true, length: { minimum: 6 }
   # ??? add validates password_confrimation == password ???
-
+  
+  # Counter of colpeted tasks
   def get_completed_count
     TodoItem.where(completed: true).count
   end
+  
+  # Work with token
+  def User.new_remember_token
+    # create new token
+    SecureRandom.urlsafe_base64
+  end
+  
+  def User.encrypt(token)
+    # encrypt token by hash
+    Digest::SHA1.hexdigest(token.to_s)
+  end
+  
+  private
+
+    def create_remember_token
+      self.remember_token = User.encrypt(User.new_remember_token)
+    end
 end
+
+
+
+
+
