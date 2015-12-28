@@ -17,7 +17,7 @@ class SessionsController < ApplicationController
       # !!! session[:user_id] = user.id
       
       sign_in user
-      redirect_to root_path, notice: "Logged in successfully"
+      redirect_to root_path, notice: "Signed in successfully"
     else
       
       redirect_to login_path, alert: 'Invalid email/password combination'
@@ -26,6 +26,6 @@ class SessionsController < ApplicationController
 
   def destroy
   	sign_out
-  	redirect_to login_path, notice: "You have been logged out"
+  	redirect_to login_path, notice: "You have been Signed out"
   end
 end
