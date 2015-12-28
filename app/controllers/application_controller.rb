@@ -4,21 +4,22 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
   include SessionsHelper
-  
+
   before_action :ensure_login
-  helper_method :logged_in?, :current_user
+  helper_method :signed_in?, :current_user
 
   protected
     def ensure_login
       # Always go to login page unless session contains user_id:
       # No user Id -> no login -> redirect_to login_path
-      redirect_to login_path unless session[:user_id]
+      redirect_to login_path unless signed_in?
       
     end
     
 
     def current_user
       
-      @current_user ||= User.find(session[:user_id]) if session[:user_id]       
+      remember_token = User.encrypt(cookies[:remember_token])
+      @current_user ||= User.find_by(remember_token: remember_token)      
     end
 end

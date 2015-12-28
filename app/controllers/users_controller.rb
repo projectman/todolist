@@ -33,13 +33,16 @@ class UsersController < ApplicationController
   # POST /users.json
   def create
     @user = User.new(user_params)
-
+    
     respond_to do |format|
+
       if @user.save
+
         # login for just created user
         sign_in @user
+        
         # redirect to todo_list of user 
-        format.html { redirect_to todo_lists_path, notice: "User #{@user.username} was successfully created." }
+        format.html { redirect_to root_path, notice: "User #{@user.username} was successfully created." }
         format.json { render :show, status: :created, location: @user }
         
       else

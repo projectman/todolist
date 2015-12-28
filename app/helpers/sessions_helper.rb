@@ -14,12 +14,22 @@ module SessionsHelper
   end
 
   # Check that user is logged in
-  def logged_in?
+  def signed_in?
     !current_user.nil?	 # nil is false
-    
   end
 
+  def sign_out
+  	# in case the cookie has been stolen, 
+  	# as it could still be used to authorize a user
+  	current_user.update_attribute(:remember_token, 
+  								User.encrypt(User.new_remember_token))
+  	
+  	# Delete current cookies
+  	cookies.delete(:remember_token)
 
+  	self.current_user=nil
+
+  end
   # Method 'current_user='
   def current_user=(user)
     @current_user = user
