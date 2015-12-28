@@ -7,14 +7,14 @@ RSpec.describe "AuthenticationPages", type: :request do
       get login_path 
       expect(response).to have_http_status(200)
       visit (login_path)
-      expect(page).to have_content('Login')
+      expect(page).to have_content('Sign in')
     end
   end
 
   describe "with invalid information" do
-    it "should have login page without authentication" do
+    it "should have Signin page without authentication" do
       visit (login_path)
-      expect(page).to have_content('Login') 
+      expect(page).to have_content('Sing in') 
       visit (login_path)
       have_content('Invalid username/password combination')
     end

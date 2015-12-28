@@ -1,15 +1,11 @@
 Tasks for development
 
-1. add info on login page that if we logined: "You are logged in as 'username' and don't need login again. Logout first to login as another user". 
+1. Edit Ream me file. 
 
 2. Will show the task for another user that is login now via direct link of todo_list/todo_task? 
 
 3. Add notice on "login page" that caps on
 
-4. delite "home" and 'back' in main views. It should be only in footer. 
-
 5. Creates tests for Singin
-
-6. check - change signout from logout
 
 7. when create - blocked email even user hasn't created?? Now it swiched off. 

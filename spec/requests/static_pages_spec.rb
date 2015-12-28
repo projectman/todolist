@@ -5,11 +5,11 @@ describe "Initial tests: " do
   
   
   
-  scenario "Visit index page without login not fail" do 
+  scenario "Visit index page without signin redirect to Sign in page" do 
     #When one visits index without login redirect to login page
     visit (todo_lists_path)
     expect(page.status_code).to eq(200)
-    expect(page).to have_content('Login')
+    expect(page).to have_content('Sign in')
   end
 
 
