@@ -1,5 +1,5 @@
 
-<p><strong>List Name:</strong><%= @todo_list.list_name %></p>
+<p><strong>List Name: </strong> <%= @todo_list.list_name %></p>
 
 <p> <strong>List Due Date:</strong> <%= @todo_list.list_due_date %> </p>
 
@@ -22,12 +22,12 @@
         <td><%= todo_item.description %></td>
         <td><%= todo_item.completed %></td>
         <td><%= link_to 'Show', [@todo_list, todo_item] %></td>
-        <td></td>
+        <td><%= link_to 'Edit', [@todo_list, todo_item], method: :get %></td>
         <td><%= link_to 'Destroy', [@todo_list, todo_item], method: :delete %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
-<%= link_to 'Edit', edit_todo_list_path(@todo_list) %> |
-<%= link_to 'New Todo Item', new_todo_list_todo_item_path(@todo_list) %> 
+<%= link_to 'Edit Current Item', edit_todo_list_path(@todo_list) %> |
+<%= link_to 'Create New Todo Item', new_todo_list_todo_item_path(@todo_list) %> 
