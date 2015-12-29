@@ -1,13 +1,13 @@
 
-<p>
+<h2>
   <strong>Title:</strong>
   <%= @todo_item.title %>
-</p>
+</h2>
 
-<p>
+<h3>
   <strong>Due date:</strong>
   <%= @todo_item.due_date %>
-</p>
+</h3>
 
 <p>
   <strong>Description:</strong>
@@ -19,5 +19,5 @@
   <%= @todo_item.completed %>
 </p>
 
-<%= link_to 'Edit current Item', edit_todo_list_todo_item_path(@todo_list, @todo_item) %> 
+<%= link_to 'Edit Item', edit_todo_list_todo_item_path(@todo_list, @todo_item) %> 
 

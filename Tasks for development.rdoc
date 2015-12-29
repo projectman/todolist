@@ -11,3 +11,5 @@ Tasks for development
 7. when create - blocked email even user hasn't created?? Now it swiched off. 
 
 8. Change status on show page for list of todo_items to check box that user could check in completed task item. 
+
+9. make validation password must have at least 1 digit or 1 letter

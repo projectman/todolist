@@ -3,5 +3,5 @@ class TodoItem < ActiveRecord::Base
 
   default_scope { order :due_date}
 
-  validates :completed, presence: true
+  # !!! validates :title, presence: true
 end
