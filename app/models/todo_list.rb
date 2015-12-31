@@ -3,7 +3,8 @@ class TodoList < ActiveRecord::Base
   
   has_many :todo_items, dependent: :destroy
   
-  default_scope { order :list_due_date}
+  # show by create_at order
+  default_scope { order :created_at}
 
   validates :list_name, presence: true
 end
