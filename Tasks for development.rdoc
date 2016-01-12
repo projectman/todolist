@@ -13,3 +13,4 @@ Tasks for development
 8. Change status on show page for list of todo_items to check box that user could check in completed task item. 
 
 9. make validation password must have at least 1 digit or 1 letter
+10. Block creating items with empty name? Todo list with empty name? 

@@ -16,8 +16,15 @@
   <% end %>
 
 	<% if signed_in? %>
-	  <div style='float: right;'>
+	  <div class="navbar-inner">
 	    Signed in as: <b> <%= current_user.username %></b>  |
+
+      <% if current_user.nil? %>
+          <%= link_to "You need to Sign in!", login_path %>
+        <% else %>
+          <%= link_to "About User: #{current_user.username}", current_user%>
+        <% end %> |
+
 	    <%= link_to "Sign out", logout_path, method: :delete %>
 
 	  </div>
@@ -32,5 +39,5 @@
 	  
 	</div>
 
-</body>
+ </body>
 </html>

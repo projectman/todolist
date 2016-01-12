@@ -1,27 +1,29 @@
+<div class="center"> 
+  <h2>Sing in</h2>
+  <% if signed_in? %>
 
-<h1>Sing in</h1>
-<% if signed_in? %>
+    <h3>You are signed in as <%= @user %>. If you need to sign in as another user, 
+      please Sign out first.</h3>
 
-  <h3>You are signed in as <%= @user %>. If you need to sign in as another user, 
-    please Sign out first.</h3>
+  <% else %>
+    <%= form_for(:session, url: sessions_path) do |f| %>
 
-<% else %>
-  <%= form_for(:session, url: sessions_path) do |f| %>
+      <div class="field"> 
+      	<%= f.label :username %> <br/> 
+      	<%= f.text_field :username %> </div>
+      
+      <br/>
 
-    <div class="field"> 
-    	<%= f.label :username %> <br/> 
-    	<%= f.text_field :username %> </div>
-    
-    <br/>
+      <div class="field"> 
+      	<%= f.label :password %> <br/> 
+      	<%= f.password_field :password %></div>
 
-    <div class="field"> 
-    	<%= f.label :password %> <br/> 
-    	<%= f.password_field :password %></div>
-
-    <div class="actions"> 
-    	<%= f.submit "Sign In" %>  
-    </div>
-   <br> New User? 
-   <%= link_to 'Create New User account', new_user_path %>
+      <div class="actions"> 
+      	<%= f.submit "Sign In", class: "btn btn-primary"%>  
+      </div>
+     <br> New User? Create 
+     <%= link_to 'New User', new_user_path, class: "btn btn-warning" %>
+    <% end %>
   <% end %>
-<% end %>
+
+</div>

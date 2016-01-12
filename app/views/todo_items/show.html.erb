@@ -1,23 +1,23 @@
+<div class='center'>
+	<h2>
+	  
+	  <%= @todo_item.title %>
+	</h2>
 
-<h2>
-  <strong>Title:</strong>
-  <%= @todo_item.title %>
-</h2>
+	<h3>
+	  <strong>Due date:</strong>
+	  <%= @todo_item.due_date %>
+	</h3>
 
-<h3>
-  <strong>Due date:</strong>
-  <%= @todo_item.due_date %>
-</h3>
+	<p class="well">
+	  Description: 
+	  <%= @todo_item.description %>
+	</p>
 
-<p>
-  <strong>Description:</strong>
-  <%= @todo_item.description %>
-</p>
+	<p>
+	  <strong>Completed:</strong>
+	  <%= @todo_item.completed %>
+	</p>
 
-<p>
-  <strong>Completed:</strong>
-  <%= @todo_item.completed %>
-</p>
-
-<%= link_to 'Edit Item', edit_todo_list_todo_item_path(@todo_list, @todo_item) %> 
-
+	<%= link_to 'Edit Item', edit_todo_list_todo_item_path(@todo_list, @todo_item), class: "btn btn-xs btn-warning" %> 
+</div>

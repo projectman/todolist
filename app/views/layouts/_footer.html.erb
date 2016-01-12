@@ -1,14 +1,14 @@
-<footer class="footer">
+<footer>
   
-  <nav>
-    <p>| <%= link_to "Home", todo_lists_path %> | 
-         <a href="javascript:history.back()"  >Back</a> |
-        <% if current_user.nil? %>
-          <%= link_to "You need to Sign in!", login_path %>
-        <% else %>
-          <%= link_to "About User: #{current_user.username}", current_user %>
-        <% end %>
-    </p>
-
+  <nav >
+    <ul class="pager">
+     
+     <li><%= link_to "Home", todo_lists_path  %> </li>
+     
+     <li><a href="javascript:history.back()"  >Back</a></li>
+     
+     
+        
+    </ul>
   </nav> 
 </footer>
